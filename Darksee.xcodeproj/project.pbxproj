@@ -3,19 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3E71E69A83E56F4C263CA5 /* Pods_Darksee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D12A7604C61EE6D92942FA /* Pods_Darksee.framework */; };
+		F42DE606260CF7ED00FBB988 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F42DE605260CF7ED00FBB988 /* README.md */; };
 		F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4A2606C42C00057CAC /* AppDelegate.swift */; };
 		F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4C2606C42C00057CAC /* SceneDelegate.swift */; };
 		F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4E2606C42C00057CAC /* ViewController.swift */; };
 		F443AE522606C42C00057CAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F443AE502606C42C00057CAC /* Main.storyboard */; };
 		F443AE542606C42E00057CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F443AE532606C42E00057CAC /* Assets.xcassets */; };
 		F443AE572606C42E00057CAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F443AE552606C42E00057CAC /* LaunchScreen.storyboard */; };
+		F443AE612606CBAA00057CAC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE602606CBAA00057CAC /* MainVC.swift */; };
+		F499C4EE260A20B9006334DB /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F499C4ED260A20B9006334DB /* InitialVC.swift */; };
+		F4D20E652606F24F00EE4304 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E632606F24F00EE4304 /* MetalRenderer.swift */; };
+		F4D20E662606F24F00EE4304 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E642606F24F00EE4304 /* PassThrough.metal */; };
+		F4D20E6B2606F25700EE4304 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E682606F25600EE4304 /* VideoCapture.swift */; };
+		F4D20E6C2606F25700EE4304 /* AVCaptureDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E692606F25600EE4304 /* AVCaptureDevice+Extension.swift */; };
+		F4D20E6D2606F25700EE4304 /* VideoCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E6A2606F25700EE4304 /* VideoCameraType.swift */; };
+		F4D20E792606F26500EE4304 /* CVPixelBuffer+CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */; };
+		F4D20E7A2606F26500EE4304 /* AVDepthData+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */; };
+		F4D20E7B2606F26500EE4304 /* CIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E742606F26500EE4304 /* CIImage+Utils.swift */; };
+		F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E8E2607604D00EE4304 /* Clipboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11D12A7604C61EE6D92942FA /* Pods_Darksee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Darksee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF52E95972B0DC8330AD85D /* Pods-Darksee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Darksee.release.xcconfig"; path = "Target Support Files/Pods-Darksee/Pods-Darksee.release.xcconfig"; sourceTree = "<group>"; };
+		D001EA231ABD0AE71ACED065 /* Pods-Darksee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Darksee.debug.xcconfig"; path = "Target Support Files/Pods-Darksee/Pods-Darksee.debug.xcconfig"; sourceTree = "<group>"; };
+		F42DE605260CF7ED00FBB988 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F443AE472606C42C00057CAC /* Darksee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darksee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F443AE4A2606C42C00057CAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F443AE4C2606C42C00057CAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +41,17 @@
 		F443AE532606C42E00057CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F443AE562606C42E00057CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F443AE582606C42E00057CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F443AE602606CBAA00057CAC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		F499C4ED260A20B9006334DB /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		F4D20E632606F24F00EE4304 /* MetalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
+		F4D20E642606F24F00EE4304 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
+		F4D20E682606F25600EE4304 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		F4D20E692606F25600EE4304 /* AVCaptureDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extension.swift"; sourceTree = "<group>"; };
+		F4D20E6A2606F25700EE4304 /* VideoCameraType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCameraType.swift; sourceTree = "<group>"; };
+		F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+CIImage.swift"; sourceTree = "<group>"; };
+		F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVDepthData+Utils.swift"; sourceTree = "<group>"; };
+		F4D20E742606F26500EE4304 /* CIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Utils.swift"; sourceTree = "<group>"; };
+		F4D20E8E2607604D00EE4304 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3E71E69A83E56F4C263CA5 /* Pods_Darksee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47E303ECFF961DE86305ADF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D001EA231ABD0AE71ACED065 /* Pods-Darksee.debug.xcconfig */,
+				3FF52E95972B0DC8330AD85D /* Pods-Darksee.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		718BA0DFF6946ABF2C15F689 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11D12A7604C61EE6D92942FA /* Pods_Darksee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F443AE3E2606C42C00057CAC = {
 			isa = PBXGroup;
 			children = (
+				F42DE605260CF7ED00FBB988 /* README.md */,
 				F443AE492606C42C00057CAC /* Darksee */,
 				F443AE482606C42C00057CAC /* Products */,
+				47E303ECFF961DE86305ADF4 /* Pods */,
+				718BA0DFF6946ABF2C15F689 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +108,55 @@
 				F443AE4A2606C42C00057CAC /* AppDelegate.swift */,
 				F443AE4C2606C42C00057CAC /* SceneDelegate.swift */,
 				F443AE4E2606C42C00057CAC /* ViewController.swift */,
+				F4D20E8E2607604D00EE4304 /* Clipboard.swift */,
+				F443AE5F2606CB9900057CAC /* View Controllers */,
 				F443AE502606C42C00057CAC /* Main.storyboard */,
 				F443AE532606C42E00057CAC /* Assets.xcassets */,
+				F4D20E622606F23A00EE4304 /* Utils */,
+				F4D20E612606F23800EE4304 /* VideoCapture */,
+				F4D20E602606F23200EE4304 /* Renderer */,
 				F443AE552606C42E00057CAC /* LaunchScreen.storyboard */,
 				F443AE582606C42E00057CAC /* Info.plist */,
 			);
 			path = Darksee;
+			sourceTree = "<group>";
+		};
+		F443AE5F2606CB9900057CAC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F499C4ED260A20B9006334DB /* InitialVC.swift */,
+				F443AE602606CBAA00057CAC /* MainVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F4D20E602606F23200EE4304 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				F4D20E632606F24F00EE4304 /* MetalRenderer.swift */,
+				F4D20E642606F24F00EE4304 /* PassThrough.metal */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		F4D20E612606F23800EE4304 /* VideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				F4D20E692606F25600EE4304 /* AVCaptureDevice+Extension.swift */,
+				F4D20E6A2606F25700EE4304 /* VideoCameraType.swift */,
+				F4D20E682606F25600EE4304 /* VideoCapture.swift */,
+			);
+			path = VideoCapture;
+			sourceTree = "<group>";
+		};
+		F4D20E622606F23A00EE4304 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */,
+				F4D20E742606F26500EE4304 /* CIImage+Utils.swift */,
+				F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F443AE5B2606C42E00057CAC /* Build configuration list for PBXNativeTarget "Darksee" */;
 			buildPhases = (
+				30CC3D8A5180CD68B90AA94C /* [CP] Check Pods Manifest.lock */,
 				F443AE432606C42C00057CAC /* Sources */,
 				F443AE442606C42C00057CAC /* Frameworks */,
 				F443AE452606C42C00057CAC /* Resources */,
+				AA89BBBEF7B4F6B29CC14A3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,19 +220,73 @@
 			files = (
 				F443AE572606C42E00057CAC /* LaunchScreen.storyboard in Resources */,
 				F443AE542606C42E00057CAC /* Assets.xcassets in Resources */,
+				F42DE606260CF7ED00FBB988 /* README.md in Resources */,
 				F443AE522606C42C00057CAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30CC3D8A5180CD68B90AA94C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Darksee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA89BBBEF7B4F6B29CC14A3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F443AE432606C42C00057CAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D20E6B2606F25700EE4304 /* VideoCapture.swift in Sources */,
 				F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */,
+				F4D20E662606F24F00EE4304 /* PassThrough.metal in Sources */,
+				F443AE612606CBAA00057CAC /* MainVC.swift in Sources */,
+				F4D20E652606F24F00EE4304 /* MetalRenderer.swift in Sources */,
+				F4D20E6C2606F25700EE4304 /* AVCaptureDevice+Extension.swift in Sources */,
 				F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */,
+				F4D20E7B2606F26500EE4304 /* CIImage+Utils.swift in Sources */,
+				F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */,
+				F4D20E6D2606F25700EE4304 /* VideoCameraType.swift in Sources */,
+				F4D20E792606F26500EE4304 /* CVPixelBuffer+CIImage.swift in Sources */,
+				F499C4EE260A20B9006334DB /* InitialVC.swift in Sources */,
+				F4D20E7A2606F26500EE4304 /* AVDepthData+Utils.swift in Sources */,
 				F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,18 +431,22 @@
 		};
 		F443AE5C2606C42E00057CAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D001EA231ABD0AE71ACED065 /* Pods-Darksee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL8994GPA6;
 				INFOPLIST_FILE = Darksee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liudasbar.Darksee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,18 +454,22 @@
 		};
 		F443AE5D2606C42E00057CAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF52E95972B0DC8330AD85D /* Pods-Darksee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL8994GPA6;
 				INFOPLIST_FILE = Darksee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liudasbar.Darksee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
