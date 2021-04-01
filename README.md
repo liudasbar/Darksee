@@ -26,7 +26,7 @@ Not ready yet.
 
 ## Project base
 
-Project is based on [this project](https://github.com/shu223/iOS-Depth-Sampler).
+Darksee is based on [this project](https://github.com/shu223/iOS-Depth-Sampler).
 
 ## License
 
