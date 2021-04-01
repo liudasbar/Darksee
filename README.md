@@ -20,10 +20,13 @@ User needs to grant these privacy permissions:
 
 See: Not available
 
-
 ## App documentation
 
 Not ready yet.
+
+## Project base
+
+Project is based on [this project](https://github.com/shu223/iOS-Depth-Sampler).
 
 ## License
 
