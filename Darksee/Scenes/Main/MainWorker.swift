@@ -104,11 +104,10 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         // Add a depth data output
         if session.canAddOutput(depthDataOutput) {
             session.addOutput(depthDataOutput)
-            depthDataOutput.isFilteringEnabled = false
             if let connection = depthDataOutput.connection(with: .depthData) {
                 connection.isEnabled = true
             } else {
-                return .fail(.noAVCaptureSession) // Check if return is needed or its okay without fail
+                return .fail(.noAVCaptureSession)
             }
         } else {
             session.commitConfiguration()
@@ -154,22 +153,17 @@ extension DefaultMainWorker {
         guard renderingEnabled else {
             return
         }
-        
         guard renderingEnabled,
             let syncedDepthData: AVCaptureSynchronizedDepthData =
             synchronizedDataCollection.synchronizedData(for: depthDataOutput) as? AVCaptureSynchronizedDepthData else {
                 return
         }
-        
         guard !syncedDepthData.depthDataWasDropped else {
             return
         }
         
         let depthData = syncedDepthData.depthData
         let depthPixelBuffer = depthData.depthDataMap
-//        guard let formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer) else {
-//            return
-//        }
         
         if !videoDepthConverter.isPrepared {
             var depthFormatDescription: CMFormatDescription?
@@ -183,10 +177,6 @@ extension DefaultMainWorker {
             print("Unable to process depth")
             return
         }
-        
-//        if !videoDepthMixer.isPrepared {
-//            videoDepthMixer.prepare(with: formatDescription, outputRetainedBufferCountHint: 3)
-//        }
         
         dataOutputQueue.async { [weak self] in
             self?.renderingEnabled = true

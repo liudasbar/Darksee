@@ -197,21 +197,6 @@ class MainVC: UIViewController, MTKViewDelegate {
             
             self.videoImage = CIImage(cvPixelBuffer: videoPixelBuffer)
             
-            let applyHistoEq: Bool = true
-            
-            self.serialQueue.async {
-                guard let depthData = self.longDistance ? depthData?.convertToDisparity() : depthData else { return }
-                
-                guard let ciImage = depthData.depthDataMap.transformedImage(targetSize: self.currentDrawableSize, rotationAngle: 0) else { return }
-                self.depthImage = applyHistoEq ? ciImage.applyingFilter("YUCIHistogramEqualization") : ciImage
-                
-                //Add contrast
-                if self.addContrast {
-                    self.depthImage = self.filter(self.depthImage ?? ciImage, intensity: 1.1)
-                }
-                
-                //self.setAutomaticDistance(ciImage: ciImage)
-            }
         }
         videoCapture.setDepthFilterEnabled(false)
         

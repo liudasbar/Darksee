@@ -49,8 +49,16 @@ extension MainViews {
         }
         
         func setupMetalKitView() {
-            jetView = PreviewMetalView()
+            jetView = PreviewMetalView(frame: .zero)
             jetView.rotation = .rotate90Degrees
+            addSubview(jetView)
+            jetView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                jetView.topAnchor.constraint(equalTo: topAnchor),
+                jetView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                jetView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                jetView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
         }
 
         // MARK: - Populate

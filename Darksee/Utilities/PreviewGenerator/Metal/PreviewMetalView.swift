@@ -195,8 +195,8 @@ class PreviewMetalView: MTKView {
         textureTranform = transform.inverted()
     }
     
-    init() {
-        super.init(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), device: MTLCreateSystemDefaultDevice())
+    init(frame: CGRect) {
+        super.init(frame: frame, device: MTLCreateSystemDefaultDevice())
         
         device = MTLCreateSystemDefaultDevice()
         configureMetal()

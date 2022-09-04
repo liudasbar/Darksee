@@ -29,7 +29,6 @@
 		C96EA3E328C50936006264E5 /* PreviewMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3E228C50936006264E5 /* PreviewMetalView.swift */; };
 		C96EA3E828C50997006264E5 /* FilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3E728C50997006264E5 /* FilterRenderer.swift */; };
 		C96EA3EB28C50A14006264E5 /* DepthToJETConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */; };
-		C96EA3EE28C50A3A006264E5 /* VideoMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */; };
 		C96EA3F428C50A61006264E5 /* PointCloud.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F028C50A61006264E5 /* PointCloud.metal */; };
 		C96EA3F528C50A61006264E5 /* Mixer.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F128C50A61006264E5 /* Mixer.metal */; };
 		C96EA3F628C50A61006264E5 /* DepthToJET.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F228C50A61006264E5 /* DepthToJET.metal */; };
@@ -55,9 +54,6 @@
 		F4D20E6B2606F25700EE4304 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E682606F25600EE4304 /* VideoCapture.swift */; };
 		F4D20E6C2606F25700EE4304 /* AVCaptureDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E692606F25600EE4304 /* AVCaptureDevice+Extension.swift */; };
 		F4D20E6D2606F25700EE4304 /* VideoCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E6A2606F25700EE4304 /* VideoCameraType.swift */; };
-		F4D20E792606F26500EE4304 /* CVPixelBuffer+CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */; };
-		F4D20E7A2606F26500EE4304 /* AVDepthData+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */; };
-		F4D20E7B2606F26500EE4304 /* CIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E742606F26500EE4304 /* CIImage+Utils.swift */; };
 		F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E8E2607604D00EE4304 /* Clipboard.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +81,6 @@
 		C96EA3E228C50936006264E5 /* PreviewMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMetalView.swift; sourceTree = "<group>"; };
 		C96EA3E728C50997006264E5 /* FilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderer.swift; sourceTree = "<group>"; };
 		C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthToJETConverter.swift; sourceTree = "<group>"; };
-		C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMixer.swift; sourceTree = "<group>"; };
 		C96EA3F028C50A61006264E5 /* PointCloud.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointCloud.metal; sourceTree = "<group>"; };
 		C96EA3F128C50A61006264E5 /* Mixer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Mixer.metal; sourceTree = "<group>"; };
 		C96EA3F228C50A61006264E5 /* DepthToJET.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DepthToJET.metal; sourceTree = "<group>"; };
@@ -118,9 +113,6 @@
 		F4D20E682606F25600EE4304 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		F4D20E692606F25600EE4304 /* AVCaptureDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extension.swift"; sourceTree = "<group>"; };
 		F4D20E6A2606F25700EE4304 /* VideoCameraType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCameraType.swift; sourceTree = "<group>"; };
-		F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+CIImage.swift"; sourceTree = "<group>"; };
-		F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVDepthData+Utils.swift"; sourceTree = "<group>"; };
-		F4D20E742606F26500EE4304 /* CIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage+Utils.swift"; sourceTree = "<group>"; };
 		F4D20E8E2607604D00EE4304 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +148,6 @@
 		C96EA3B428C5089D006264E5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C96EA3E528C50981006264E5 /* PreviewGenerator */,
 				C96EA3CD28C508E4006264E5 /* Permissions */,
 				C96EA3B728C508BD006264E5 /* Main */,
 			);
@@ -235,7 +226,6 @@
 				C96EA3E128C5092C006264E5 /* Metal */,
 				C96EA3E628C5098D006264E5 /* Filter */,
 				C96EA3E928C50A06006264E5 /* JET */,
-				C96EA3EC28C50A29006264E5 /* VideoMixer */,
 			);
 			path = PreviewGenerator;
 			sourceTree = "<group>";
@@ -254,14 +244,6 @@
 				C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */,
 			);
 			path = JET;
-			sourceTree = "<group>";
-		};
-		C96EA3EC28C50A29006264E5 /* VideoMixer */ = {
-			isa = PBXGroup;
-			children = (
-				C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */,
-			);
-			path = VideoMixer;
 			sourceTree = "<group>";
 		};
 		C96EA3EF28C50A61006264E5 /* Shaders */ = {
@@ -310,6 +292,7 @@
 		C96EA40828C526C7006264E5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C96EA3E528C50981006264E5 /* PreviewGenerator */,
 				C96EA41028C52730006264E5 /* PointCloud */,
 				C96EA40E28C5270F006264E5 /* HistogramCalculator.h */,
 				C96EA40D28C5270F006264E5 /* HistogramCalculator.m */,
@@ -363,7 +346,6 @@
 				C96EA3B428C5089D006264E5 /* Scenes */,
 				F443AE5F2606CB9900057CAC /* View Controllers */,
 				F443AE532606C42E00057CAC /* Assets.xcassets */,
-				F4D20E622606F23A00EE4304 /* Utils */,
 				F4D20E612606F23800EE4304 /* VideoCapture */,
 				F4D20E602606F23200EE4304 /* Renderer */,
 				F443AE552606C42E00057CAC /* LaunchScreen.storyboard */,
@@ -398,16 +380,6 @@
 				F4D20E682606F25600EE4304 /* VideoCapture.swift */,
 			);
 			path = VideoCapture;
-			sourceTree = "<group>";
-		};
-		F4D20E622606F23A00EE4304 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				F4D20E732606F26500EE4304 /* AVDepthData+Utils.swift */,
-				F4D20E742606F26500EE4304 /* CIImage+Utils.swift */,
-				F4D20E722606F26500EE4304 /* CVPixelBuffer+CIImage.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,24 +493,20 @@
 				F4D20E6C2606F25700EE4304 /* AVCaptureDevice+Extension.swift in Sources */,
 				F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */,
 				C96EA3C328C508BD006264E5 /* MainViewController.swift in Sources */,
-				F4D20E7B2606F26500EE4304 /* CIImage+Utils.swift in Sources */,
 				C96EA3DA28C508E4006264E5 /* PermissionsRouter.swift in Sources */,
 				F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */,
 				C96EA3FF28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift in Sources */,
 				F4D20E6D2606F25700EE4304 /* VideoCameraType.swift in Sources */,
 				C96EA40728C5136E006264E5 /* AnyPublisher+Shorthands.swift in Sources */,
-				F4D20E792606F26500EE4304 /* CVPixelBuffer+CIImage.swift in Sources */,
 				C96EA3EB28C50A14006264E5 /* DepthToJETConverter.swift in Sources */,
 				C96EA3F728C50A61006264E5 /* PassThrough.metal in Sources */,
 				C96EA3DE28C508E4006264E5 /* PermissionsPresenter.swift in Sources */,
 				C96EA3F928C50FC0006264E5 /* PreviewMetalView+Rotation.swift in Sources */,
 				C96EA40F28C5270F006264E5 /* HistogramCalculator.m in Sources */,
 				F499C4EE260A20B9006334DB /* InitialVC.swift in Sources */,
-				C96EA3EE28C50A3A006264E5 /* VideoMixer.swift in Sources */,
 				C96EA3C528C508BD006264E5 /* MainPresenter.swift in Sources */,
 				C96EA41628C52730006264E5 /* PointCloudMetalView.mm in Sources */,
 				C96EA3DF28C508E4006264E5 /* PermissionsViews+RootView.swift in Sources */,
-				F4D20E7A2606F26500EE4304 /* AVDepthData+Utils.swift in Sources */,
 				F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */,
 				C96EA40528C5130E006264E5 /* CustomError.swift in Sources */,
 				C96EA3DB28C508E4006264E5 /* PermissionsWorker.swift in Sources */,
