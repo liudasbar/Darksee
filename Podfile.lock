@@ -1,33 +1,3 @@
-PODS:
-  - CheckMarkView (0.4.3)
-  - SwiftAssetsPickerController (0.4.0):
-    - CheckMarkView (~> 0.4.2)
-  - Vivid (0.9)
+PODFILE CHECKSUM: 6d9cee58faeb44e1c261da7df80d9a079536f512
 
-DEPENDENCIES:
-  - SwiftAssetsPickerController (from `https://github.com/shu223/SwiftAssetsPickerController`, branch `temp/depth_swift5`)
-  - Vivid
-
-SPEC REPOS:
-  trunk:
-    - CheckMarkView
-    - Vivid
-
-EXTERNAL SOURCES:
-  SwiftAssetsPickerController:
-    :branch: temp/depth_swift5
-    :git: https://github.com/shu223/SwiftAssetsPickerController
-
-CHECKOUT OPTIONS:
-  SwiftAssetsPickerController:
-    :commit: ad3d6cd42dd7748aeda013e94886e4e1f2d99936
-    :git: https://github.com/shu223/SwiftAssetsPickerController
-
-SPEC CHECKSUMS:
-  CheckMarkView: 8bcac176673ed40d05f220d335de92f6a2702404
-  SwiftAssetsPickerController: 878079b48016bba44ecd7651592fee04e24b6aae
-  Vivid: 0fde7409beac71224deb151dd78f98a5bb860497
-
-PODFILE CHECKSUM: 71f5ffcdd10f0178c440f5d5dbcb453837db8d22
-
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

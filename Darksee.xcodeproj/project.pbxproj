@@ -3,16 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0F3E71E69A83E56F4C263CA5 /* Pods_Darksee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D12A7604C61EE6D92942FA /* Pods_Darksee.framework */; };
+		C96EA3C228C508BD006264E5 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3B828C508BD006264E5 /* MainConfigurator.swift */; };
+		C96EA3C328C508BD006264E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3B928C508BD006264E5 /* MainViewController.swift */; };
+		C96EA3C428C508BD006264E5 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3BA28C508BD006264E5 /* MainInteractor.swift */; };
+		C96EA3C528C508BD006264E5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3BB28C508BD006264E5 /* MainPresenter.swift */; };
+		C96EA3C628C508BD006264E5 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3BC28C508BD006264E5 /* MainRouter.swift */; };
+		C96EA3C728C508BD006264E5 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3BD28C508BD006264E5 /* MainWorker.swift */; };
+		C96EA3C828C508BD006264E5 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3BE28C508BD006264E5 /* MainModels.swift */; };
+		C96EA3C928C508BD006264E5 /* MainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3C028C508BD006264E5 /* MainViews.swift */; };
+		C96EA3CA28C508BD006264E5 /* MainViews+RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3C128C508BD006264E5 /* MainViews+RootView.swift */; };
+		C96EA3D828C508E4006264E5 /* PermissionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3CE28C508E4006264E5 /* PermissionsConfigurator.swift */; };
+		C96EA3D928C508E4006264E5 /* PermissionsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3CF28C508E4006264E5 /* PermissionsModels.swift */; };
+		C96EA3DA28C508E4006264E5 /* PermissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D028C508E4006264E5 /* PermissionsRouter.swift */; };
+		C96EA3DB28C508E4006264E5 /* PermissionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D128C508E4006264E5 /* PermissionsWorker.swift */; };
+		C96EA3DC28C508E4006264E5 /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D228C508E4006264E5 /* PermissionsViewController.swift */; };
+		C96EA3DD28C508E4006264E5 /* PermissionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D328C508E4006264E5 /* PermissionsInteractor.swift */; };
+		C96EA3DE28C508E4006264E5 /* PermissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D428C508E4006264E5 /* PermissionsPresenter.swift */; };
+		C96EA3DF28C508E4006264E5 /* PermissionsViews+RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D628C508E4006264E5 /* PermissionsViews+RootView.swift */; };
+		C96EA3E028C508E4006264E5 /* PermissionsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3D728C508E4006264E5 /* PermissionsViews.swift */; };
+		C96EA3E328C50936006264E5 /* PreviewMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3E228C50936006264E5 /* PreviewMetalView.swift */; };
+		C96EA3E828C50997006264E5 /* FilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3E728C50997006264E5 /* FilterRenderer.swift */; };
+		C96EA3EB28C50A14006264E5 /* DepthToJETConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */; };
+		C96EA3EE28C50A3A006264E5 /* VideoMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */; };
+		C96EA3F428C50A61006264E5 /* PointCloud.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F028C50A61006264E5 /* PointCloud.metal */; };
+		C96EA3F528C50A61006264E5 /* Mixer.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F128C50A61006264E5 /* Mixer.metal */; };
+		C96EA3F628C50A61006264E5 /* DepthToJET.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F228C50A61006264E5 /* DepthToJET.metal */; };
+		C96EA3F728C50A61006264E5 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F328C50A61006264E5 /* PassThrough.metal */; };
+		C96EA3F928C50FC0006264E5 /* PreviewMetalView+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3F828C50FC0006264E5 /* PreviewMetalView+Rotation.swift */; };
+		C96EA3FF28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA3FE28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift */; };
+		C96EA40228C51269006264E5 /* MakeDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA40128C51269006264E5 /* MakeDefaultView.swift */; };
+		C96EA40528C5130E006264E5 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA40428C5130E006264E5 /* CustomError.swift */; };
+		C96EA40728C5136E006264E5 /* AnyPublisher+Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA40628C5136E006264E5 /* AnyPublisher+Shorthands.swift */; };
+		C96EA40F28C5270F006264E5 /* HistogramCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = C96EA40D28C5270F006264E5 /* HistogramCalculator.m */; };
+		C96EA41528C52730006264E5 /* AAPLTransforms.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41228C52730006264E5 /* AAPLTransforms.mm */; };
+		C96EA41628C52730006264E5 /* PointCloudMetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41428C52730006264E5 /* PointCloudMetalView.mm */; };
 		F42DE606260CF7ED00FBB988 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F42DE605260CF7ED00FBB988 /* README.md */; };
 		F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4A2606C42C00057CAC /* AppDelegate.swift */; };
 		F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4C2606C42C00057CAC /* SceneDelegate.swift */; };
 		F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4E2606C42C00057CAC /* ViewController.swift */; };
-		F443AE522606C42C00057CAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F443AE502606C42C00057CAC /* Main.storyboard */; };
 		F443AE542606C42E00057CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F443AE532606C42E00057CAC /* Assets.xcassets */; };
 		F443AE572606C42E00057CAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F443AE552606C42E00057CAC /* LaunchScreen.storyboard */; };
 		F443AE612606CBAA00057CAC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE602606CBAA00057CAC /* MainVC.swift */; };
@@ -31,13 +64,50 @@
 /* Begin PBXFileReference section */
 		11D12A7604C61EE6D92942FA /* Pods_Darksee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Darksee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF52E95972B0DC8330AD85D /* Pods-Darksee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Darksee.release.xcconfig"; path = "Target Support Files/Pods-Darksee/Pods-Darksee.release.xcconfig"; sourceTree = "<group>"; };
+		C96EA3B828C508BD006264E5 /* MainConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
+		C96EA3B928C508BD006264E5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C96EA3BA28C508BD006264E5 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		C96EA3BB28C508BD006264E5 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		C96EA3BC28C508BD006264E5 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		C96EA3BD28C508BD006264E5 /* MainWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
+		C96EA3BE28C508BD006264E5 /* MainModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
+		C96EA3C028C508BD006264E5 /* MainViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViews.swift; sourceTree = "<group>"; };
+		C96EA3C128C508BD006264E5 /* MainViews+RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViews+RootView.swift"; sourceTree = "<group>"; };
+		C96EA3CE28C508E4006264E5 /* PermissionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsConfigurator.swift; sourceTree = "<group>"; };
+		C96EA3CF28C508E4006264E5 /* PermissionsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsModels.swift; sourceTree = "<group>"; };
+		C96EA3D028C508E4006264E5 /* PermissionsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
+		C96EA3D128C508E4006264E5 /* PermissionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsWorker.swift; sourceTree = "<group>"; };
+		C96EA3D228C508E4006264E5 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
+		C96EA3D328C508E4006264E5 /* PermissionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsInteractor.swift; sourceTree = "<group>"; };
+		C96EA3D428C508E4006264E5 /* PermissionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsPresenter.swift; sourceTree = "<group>"; };
+		C96EA3D628C508E4006264E5 /* PermissionsViews+RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PermissionsViews+RootView.swift"; sourceTree = "<group>"; };
+		C96EA3D728C508E4006264E5 /* PermissionsViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViews.swift; sourceTree = "<group>"; };
+		C96EA3E228C50936006264E5 /* PreviewMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMetalView.swift; sourceTree = "<group>"; };
+		C96EA3E728C50997006264E5 /* FilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderer.swift; sourceTree = "<group>"; };
+		C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthToJETConverter.swift; sourceTree = "<group>"; };
+		C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMixer.swift; sourceTree = "<group>"; };
+		C96EA3F028C50A61006264E5 /* PointCloud.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointCloud.metal; sourceTree = "<group>"; };
+		C96EA3F128C50A61006264E5 /* Mixer.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Mixer.metal; sourceTree = "<group>"; };
+		C96EA3F228C50A61006264E5 /* DepthToJET.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DepthToJET.metal; sourceTree = "<group>"; };
+		C96EA3F328C50A61006264E5 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
+		C96EA3F828C50FC0006264E5 /* PreviewMetalView+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewMetalView+Rotation.swift"; sourceTree = "<group>"; };
+		C96EA3FE28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Orientation.swift"; sourceTree = "<group>"; };
+		C96EA40128C51269006264E5 /* MakeDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDefaultView.swift; sourceTree = "<group>"; };
+		C96EA40428C5130E006264E5 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		C96EA40628C5136E006264E5 /* AnyPublisher+Shorthands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Shorthands.swift"; sourceTree = "<group>"; };
+		C96EA40C28C5270E006264E5 /* Darksee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Darksee-Bridging-Header.h"; sourceTree = "<group>"; };
+		C96EA40D28C5270F006264E5 /* HistogramCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistogramCalculator.m; sourceTree = "<group>"; };
+		C96EA40E28C5270F006264E5 /* HistogramCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistogramCalculator.h; sourceTree = "<group>"; };
+		C96EA41128C52730006264E5 /* PointCloudMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudMetalView.h; sourceTree = "<group>"; };
+		C96EA41228C52730006264E5 /* AAPLTransforms.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAPLTransforms.mm; sourceTree = "<group>"; };
+		C96EA41328C52730006264E5 /* AAPLTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTransforms.h; sourceTree = "<group>"; };
+		C96EA41428C52730006264E5 /* PointCloudMetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointCloudMetalView.mm; sourceTree = "<group>"; };
 		D001EA231ABD0AE71ACED065 /* Pods-Darksee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Darksee.debug.xcconfig"; path = "Target Support Files/Pods-Darksee/Pods-Darksee.debug.xcconfig"; sourceTree = "<group>"; };
 		F42DE605260CF7ED00FBB988 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F443AE472606C42C00057CAC /* Darksee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darksee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F443AE4A2606C42C00057CAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F443AE4C2606C42C00057CAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F443AE4E2606C42C00057CAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F443AE512606C42C00057CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F443AE532606C42E00057CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F443AE562606C42E00057CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F443AE582606C42E00057CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +153,182 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C96EA3B428C5089D006264E5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3E528C50981006264E5 /* PreviewGenerator */,
+				C96EA3CD28C508E4006264E5 /* Permissions */,
+				C96EA3B728C508BD006264E5 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C96EA3B728C508BD006264E5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3B828C508BD006264E5 /* MainConfigurator.swift */,
+				C96EA3B928C508BD006264E5 /* MainViewController.swift */,
+				C96EA3BA28C508BD006264E5 /* MainInteractor.swift */,
+				C96EA3BB28C508BD006264E5 /* MainPresenter.swift */,
+				C96EA3BC28C508BD006264E5 /* MainRouter.swift */,
+				C96EA3BD28C508BD006264E5 /* MainWorker.swift */,
+				C96EA3BE28C508BD006264E5 /* MainModels.swift */,
+				C96EA3BF28C508BD006264E5 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C96EA3BF28C508BD006264E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3C028C508BD006264E5 /* MainViews.swift */,
+				C96EA3C128C508BD006264E5 /* MainViews+RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C96EA3CD28C508E4006264E5 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3CE28C508E4006264E5 /* PermissionsConfigurator.swift */,
+				C96EA3CF28C508E4006264E5 /* PermissionsModels.swift */,
+				C96EA3D028C508E4006264E5 /* PermissionsRouter.swift */,
+				C96EA3D128C508E4006264E5 /* PermissionsWorker.swift */,
+				C96EA3D228C508E4006264E5 /* PermissionsViewController.swift */,
+				C96EA3D328C508E4006264E5 /* PermissionsInteractor.swift */,
+				C96EA3D428C508E4006264E5 /* PermissionsPresenter.swift */,
+				C96EA3D528C508E4006264E5 /* Views */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		C96EA3D528C508E4006264E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3D628C508E4006264E5 /* PermissionsViews+RootView.swift */,
+				C96EA3D728C508E4006264E5 /* PermissionsViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C96EA3E128C5092C006264E5 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3E228C50936006264E5 /* PreviewMetalView.swift */,
+				C96EA3F828C50FC0006264E5 /* PreviewMetalView+Rotation.swift */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		C96EA3E428C50954006264E5 /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3FA28C51039006264E5 /* Metal */,
+			);
+			path = Entries;
+			sourceTree = "<group>";
+		};
+		C96EA3E528C50981006264E5 /* PreviewGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3EF28C50A61006264E5 /* Shaders */,
+				C96EA3E128C5092C006264E5 /* Metal */,
+				C96EA3E628C5098D006264E5 /* Filter */,
+				C96EA3E928C50A06006264E5 /* JET */,
+				C96EA3EC28C50A29006264E5 /* VideoMixer */,
+			);
+			path = PreviewGenerator;
+			sourceTree = "<group>";
+		};
+		C96EA3E628C5098D006264E5 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3E728C50997006264E5 /* FilterRenderer.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		C96EA3E928C50A06006264E5 /* JET */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3EA28C50A14006264E5 /* DepthToJETConverter.swift */,
+			);
+			path = JET;
+			sourceTree = "<group>";
+		};
+		C96EA3EC28C50A29006264E5 /* VideoMixer */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3ED28C50A3A006264E5 /* VideoMixer.swift */,
+			);
+			path = VideoMixer;
+			sourceTree = "<group>";
+		};
+		C96EA3EF28C50A61006264E5 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3F028C50A61006264E5 /* PointCloud.metal */,
+				C96EA3F128C50A61006264E5 /* Mixer.metal */,
+				C96EA3F228C50A61006264E5 /* DepthToJET.metal */,
+				C96EA3F328C50A61006264E5 /* PassThrough.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		C96EA3FA28C51039006264E5 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		C96EA3FD28C51060006264E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA3FE28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift */,
+				C96EA40628C5136E006264E5 /* AnyPublisher+Shorthands.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C96EA40028C5125A006264E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA40128C51269006264E5 /* MakeDefaultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C96EA40328C51305006264E5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA40428C5130E006264E5 /* CustomError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C96EA40828C526C7006264E5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA41028C52730006264E5 /* PointCloud */,
+				C96EA40E28C5270F006264E5 /* HistogramCalculator.h */,
+				C96EA40D28C5270F006264E5 /* HistogramCalculator.m */,
+				C96EA40C28C5270E006264E5 /* Darksee-Bridging-Header.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C96EA41028C52730006264E5 /* PointCloud */ = {
+			isa = PBXGroup;
+			children = (
+				C96EA41128C52730006264E5 /* PointCloudMetalView.h */,
+				C96EA41228C52730006264E5 /* AAPLTransforms.mm */,
+				C96EA41328C52730006264E5 /* AAPLTransforms.h */,
+				C96EA41428C52730006264E5 /* PointCloudMetalView.mm */,
+			);
+			path = PointCloud;
+			sourceTree = "<group>";
+		};
 		F443AE3E2606C42C00057CAC = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +355,13 @@
 				F443AE4C2606C42C00057CAC /* SceneDelegate.swift */,
 				F443AE4E2606C42C00057CAC /* ViewController.swift */,
 				F4D20E8E2607604D00EE4304 /* Clipboard.swift */,
+				C96EA40328C51305006264E5 /* Common */,
+				C96EA40828C526C7006264E5 /* Utilities */,
+				C96EA40028C5125A006264E5 /* Views */,
+				C96EA3FD28C51060006264E5 /* Extensions */,
+				C96EA3E428C50954006264E5 /* Entries */,
+				C96EA3B428C5089D006264E5 /* Scenes */,
 				F443AE5F2606CB9900057CAC /* View Controllers */,
-				F443AE502606C42C00057CAC /* Main.storyboard */,
 				F443AE532606C42E00057CAC /* Assets.xcassets */,
 				F4D20E622606F23A00EE4304 /* Utils */,
 				F4D20E612606F23800EE4304 /* VideoCapture */,
@@ -170,7 +421,6 @@
 				F443AE432606C42C00057CAC /* Sources */,
 				F443AE442606C42C00057CAC /* Frameworks */,
 				F443AE452606C42C00057CAC /* Resources */,
-				AA89BBBEF7B4F6B29CC14A3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +442,7 @@
 				TargetAttributes = {
 					F443AE462606C42C00057CAC = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -221,7 +472,6 @@
 				F443AE572606C42E00057CAC /* LaunchScreen.storyboard in Resources */,
 				F443AE542606C42E00057CAC /* Assets.xcassets in Resources */,
 				F42DE606260CF7ED00FBB988 /* README.md in Resources */,
-				F443AE522606C42C00057CAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,23 +500,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA89BBBEF7B4F6B29CC14A3F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Darksee/Pods-Darksee-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,31 +510,57 @@
 				F4D20E6B2606F25700EE4304 /* VideoCapture.swift in Sources */,
 				F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */,
 				F4D20E662606F24F00EE4304 /* PassThrough.metal in Sources */,
+				C96EA3F528C50A61006264E5 /* Mixer.metal in Sources */,
+				C96EA3CA28C508BD006264E5 /* MainViews+RootView.swift in Sources */,
 				F443AE612606CBAA00057CAC /* MainVC.swift in Sources */,
 				F4D20E652606F24F00EE4304 /* MetalRenderer.swift in Sources */,
+				C96EA40228C51269006264E5 /* MakeDefaultView.swift in Sources */,
+				C96EA3E328C50936006264E5 /* PreviewMetalView.swift in Sources */,
+				C96EA41528C52730006264E5 /* AAPLTransforms.mm in Sources */,
+				C96EA3C828C508BD006264E5 /* MainModels.swift in Sources */,
 				F4D20E6C2606F25700EE4304 /* AVCaptureDevice+Extension.swift in Sources */,
 				F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */,
+				C96EA3C328C508BD006264E5 /* MainViewController.swift in Sources */,
 				F4D20E7B2606F26500EE4304 /* CIImage+Utils.swift in Sources */,
+				C96EA3DA28C508E4006264E5 /* PermissionsRouter.swift in Sources */,
 				F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */,
+				C96EA3FF28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift in Sources */,
 				F4D20E6D2606F25700EE4304 /* VideoCameraType.swift in Sources */,
+				C96EA40728C5136E006264E5 /* AnyPublisher+Shorthands.swift in Sources */,
 				F4D20E792606F26500EE4304 /* CVPixelBuffer+CIImage.swift in Sources */,
+				C96EA3EB28C50A14006264E5 /* DepthToJETConverter.swift in Sources */,
+				C96EA3F728C50A61006264E5 /* PassThrough.metal in Sources */,
+				C96EA3DE28C508E4006264E5 /* PermissionsPresenter.swift in Sources */,
+				C96EA3F928C50FC0006264E5 /* PreviewMetalView+Rotation.swift in Sources */,
+				C96EA40F28C5270F006264E5 /* HistogramCalculator.m in Sources */,
 				F499C4EE260A20B9006334DB /* InitialVC.swift in Sources */,
+				C96EA3EE28C50A3A006264E5 /* VideoMixer.swift in Sources */,
+				C96EA3C528C508BD006264E5 /* MainPresenter.swift in Sources */,
+				C96EA41628C52730006264E5 /* PointCloudMetalView.mm in Sources */,
+				C96EA3DF28C508E4006264E5 /* PermissionsViews+RootView.swift in Sources */,
 				F4D20E7A2606F26500EE4304 /* AVDepthData+Utils.swift in Sources */,
 				F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */,
+				C96EA40528C5130E006264E5 /* CustomError.swift in Sources */,
+				C96EA3DB28C508E4006264E5 /* PermissionsWorker.swift in Sources */,
+				C96EA3C428C508BD006264E5 /* MainInteractor.swift in Sources */,
+				C96EA3E828C50997006264E5 /* FilterRenderer.swift in Sources */,
+				C96EA3DC28C508E4006264E5 /* PermissionsViewController.swift in Sources */,
+				C96EA3C228C508BD006264E5 /* MainConfigurator.swift in Sources */,
+				C96EA3C728C508BD006264E5 /* MainWorker.swift in Sources */,
+				C96EA3F628C50A61006264E5 /* DepthToJET.metal in Sources */,
+				C96EA3C628C508BD006264E5 /* MainRouter.swift in Sources */,
+				C96EA3F428C50A61006264E5 /* PointCloud.metal in Sources */,
+				C96EA3E028C508E4006264E5 /* PermissionsViews.swift in Sources */,
+				C96EA3C928C508BD006264E5 /* MainViews.swift in Sources */,
+				C96EA3DD28C508E4006264E5 /* PermissionsInteractor.swift in Sources */,
+				C96EA3D928C508E4006264E5 /* PermissionsModels.swift in Sources */,
+				C96EA3D828C508E4006264E5 /* PermissionsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F443AE502606C42C00057CAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F443AE512606C42C00057CAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F443AE552606C42E00057CAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,11 +694,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL8994GPA6;
 				INFOPLIST_FILE = Darksee/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +707,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liudasbar.Darksee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Darksee/Utilities/Darksee-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,11 +720,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL8994GPA6;
 				INFOPLIST_FILE = Darksee/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liudasbar.Darksee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Darksee/Utilities/Darksee-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

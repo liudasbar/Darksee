@@ -60,12 +60,11 @@ class MainVC: UIViewController, MTKViewDelegate {
     
     let serialQueue = DispatchQueue(label: "serialQueue")
     
-    var captureDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera], mediaType: .video, position: .front)
-    var currentCameraType: CameraType = .front(true)
+    var captureDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInLiDARDepthCamera], mediaType: .video, position: .back)
+    var currentCameraType: CameraType = .back(true)
     var renderer: MetalRenderer!
     var depthImage: CIImage?
     var currentDrawableSize: CGSize!
-    var currentDrawableSize2: CGSize!
     
     var videoImage: CIImage?
     
