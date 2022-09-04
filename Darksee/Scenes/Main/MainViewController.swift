@@ -51,14 +51,24 @@ class MainViewController: UIViewController {
     }
     
     private func setupActions() {
-//        rootView.setupStartButtonHandler { [weak self] in self?.start() }
+        rootView.setupSmoothingSwitchActionHandler() { [weak self] enabled in
+            self?.interactor.updateSmoothing(enabled: enabled)
+        }
     }
     
     private func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
-                                               name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForground),
-                                               name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didEnterBackground),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(willEnterForground),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
     }
     
     // MARK: - Actions

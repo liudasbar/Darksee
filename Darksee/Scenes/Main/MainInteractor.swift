@@ -4,6 +4,7 @@ import Foundation
 protocol MainBusinessLogic {
     func requestCameraAuthorization()
     func updateRenderingStatus(enabled: Bool)
+    func updateSmoothing(enabled: Bool)
 }
 
 protocol MainDataStore {
@@ -27,7 +28,7 @@ class DefaultMainInteractor: MainInteractor {
 }
 
 extension DefaultMainInteractor {
-    // MARK: - aaaa
+    // MARK: - Request Camera Authorization
     func requestCameraAuthorization() {
         worker.requestCameraAuthorization()
             .sink(
@@ -54,6 +55,7 @@ extension DefaultMainInteractor {
             .store(in: &cancelBag)
     }
     
+    // MARK: - Configure Video Session
     func configureSession() {
         worker.configureSession()
             .sink(
@@ -72,10 +74,17 @@ extension DefaultMainInteractor {
             .store(in: &cancelBag)
     }
     
+    // MARK: - Update Smoothing
+    func updateSmoothing(enabled: Bool) {
+        worker.updateSmoothing(enabled: enabled)
+    }
+    
+    // MARK: - Update Rendering Status
     func updateRenderingStatus(enabled: Bool) {
         worker.updateRenderingStatus(enabled: enabled)
     }
     
+    // MARK: - Setup Pixel Buffer Listener
     func setupPixelBufferListener() {
         worker.jetPixelBufferUpdate
             .sink(

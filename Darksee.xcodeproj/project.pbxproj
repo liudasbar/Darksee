@@ -41,6 +41,7 @@
 		C96EA40F28C5270F006264E5 /* HistogramCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = C96EA40D28C5270F006264E5 /* HistogramCalculator.m */; };
 		C96EA41528C52730006264E5 /* AAPLTransforms.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41228C52730006264E5 /* AAPLTransforms.mm */; };
 		C96EA41628C52730006264E5 /* PointCloudMetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41428C52730006264E5 /* PointCloudMetalView.mm */; };
+		C96EA41A28C56330006264E5 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41928C56330006264E5 /* RoundedButtonView.swift */; };
 		F42DE606260CF7ED00FBB988 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F42DE605260CF7ED00FBB988 /* README.md */; };
 		F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4A2606C42C00057CAC /* AppDelegate.swift */; };
 		F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4C2606C42C00057CAC /* SceneDelegate.swift */; };
@@ -97,6 +98,7 @@
 		C96EA41228C52730006264E5 /* AAPLTransforms.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAPLTransforms.mm; sourceTree = "<group>"; };
 		C96EA41328C52730006264E5 /* AAPLTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTransforms.h; sourceTree = "<group>"; };
 		C96EA41428C52730006264E5 /* PointCloudMetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointCloudMetalView.mm; sourceTree = "<group>"; };
+		C96EA41928C56330006264E5 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
 		D001EA231ABD0AE71ACED065 /* Pods-Darksee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Darksee.debug.xcconfig"; path = "Target Support Files/Pods-Darksee/Pods-Darksee.debug.xcconfig"; sourceTree = "<group>"; };
 		F42DE605260CF7ED00FBB988 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F443AE472606C42C00057CAC /* Darksee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darksee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				C96EA40128C51269006264E5 /* MakeDefaultView.swift */,
+				C96EA41928C56330006264E5 /* RoundedButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				C96EA3DB28C508E4006264E5 /* PermissionsWorker.swift in Sources */,
 				C96EA3C428C508BD006264E5 /* MainInteractor.swift in Sources */,
 				C96EA3E828C50997006264E5 /* FilterRenderer.swift in Sources */,
+				C96EA41A28C56330006264E5 /* RoundedButtonView.swift in Sources */,
 				C96EA3DC28C508E4006264E5 /* PermissionsViewController.swift in Sources */,
 				C96EA3C228C508BD006264E5 /* MainConfigurator.swift in Sources */,
 				C96EA3C728C508BD006264E5 /* MainWorker.swift in Sources */,

@@ -12,6 +12,7 @@ protocol MainWorker {
 }
 
 class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDelegate {
+    // MARK: - Variables
     private let session = AVCaptureSession()
     private let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInLiDARDepthCamera],
                                                                                mediaType: .video,
@@ -35,12 +36,14 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         renderingEnabled = enabled
     }
     
+    // MARK: - Update Smoothing
     func updateSmoothing(enabled: Bool) {
         sessionQueue.async { [weak self] in
             self?.depthDataOutput.isFilteringEnabled = enabled
         }
     }
     
+    // MARK: - Manage Camera Authorization
     func requestCameraAuthorization() -> Future<AVAuthorizationStatus, CustomError> {
         return Future() { [weak self] promise in
             switch AVCaptureDevice.authorizationStatus(for: .video) {

@@ -3,12 +3,21 @@ import UIKit
 extension MainViews {
     class RootView: UIView {
         // MARK: - Views
-        private var jetView: PreviewMetalView!
-        
-        private lazy var cameraPreviewView: UIView = {
-            let view = makeDefaultView(config: Config(backgroundColor: .systemBackground))
-            view.layer.opacity = 0
-            return view
+        private var jetView: PreviewMetalView = {
+            let metalView = PreviewMetalView(frame: .zero)
+            metalView.rotation = .rotate90Degrees
+            return metalView
+        }()
+        private lazy var smoothingActionView: RoundedButtonView = {
+            return RoundedButtonView(
+                imageName: "waveform.path.ecg.rectangle",
+                selectedImageName: "waveform.path.ecg.rectangle.fill",
+                imageWeight: .medium,
+                enabled: true,
+                tapAction: { [weak self] enabled in
+                    self?.switchSmoothing(enabled: enabled)
+                }
+            )
         }()
         private var aaa: UILabel = {
             let aaa = UILabel()
@@ -19,7 +28,7 @@ extension MainViews {
         
         // MARK: - Variables
         var currentDrawableSize: CGSize!
-        private var startButtonHandler: (() -> Void)?
+        private var smoothingSwitchActionHandler: ((_ enabled: Bool) -> Void)?
 
         // MARK: - Life Cycle
         init() {
@@ -32,25 +41,17 @@ extension MainViews {
         }
         
         // MARK: - Setup
-        private func setupViews() {
-            backgroundColor = .systemBackground
-            setupCameraPreviewView()
-            setupMetalKitView()
+        func setupSmoothingSwitchActionHandler(_ handler: @escaping (Bool) -> Void) {
+            smoothingSwitchActionHandler = handler
         }
         
-        func setupCameraPreviewView() {
-            addSubview(cameraPreviewView)
-            cameraPreviewView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                cameraPreviewView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
-                cameraPreviewView.heightAnchor.constraint(equalToConstant: 100),
-                cameraPreviewView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
-            ])
+        private func setupViews() {
+            backgroundColor = .systemBackground
+            setupMetalKitView()
+            setupSmoothingActionView()
         }
         
         func setupMetalKitView() {
-            jetView = PreviewMetalView(frame: .zero)
-            jetView.rotation = .rotate90Degrees
             addSubview(jetView)
             jetView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -60,14 +61,24 @@ extension MainViews {
                 jetView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         }
-
+        
+        func setupSmoothingActionView() {
+            addSubview(smoothingActionView)
+            smoothingActionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                smoothingActionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30),
+                smoothingActionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+                smoothingActionView.widthAnchor.constraint(equalToConstant: 70),
+                smoothingActionView.heightAnchor.constraint(equalToConstant: 70)
+            ])
+        }
+        
         // MARK: - Populate
         func updateJetView(_ viewModel: Main.LoadGreeting.ViewModel) {
             guard case let .greeting(pixelBuffer) = viewModel else {
                 return
             }
             jetView.pixelBuffer = pixelBuffer
-            addSubview(jetView)
         }
         
         func stopJetView() {
@@ -76,8 +87,8 @@ extension MainViews {
         }
         
         // MARK: - Actions
-        @objc private func startButtonAction() {
-            startButtonHandler?()
+        @objc private func switchSmoothing(enabled: Bool) {
+            smoothingSwitchActionHandler?(enabled)
         }
     }
 }
