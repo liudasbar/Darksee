@@ -3,11 +3,17 @@ import Combine
 import MetalKit
 import AVFoundation
 
+import CoreVideo
+import MobileCoreServices
+import Accelerate
+
 protocol MainWorker {
     func requestCameraAuthorization() -> Future<AVAuthorizationStatus, CustomError>
     func configureSession() -> AnyPublisher<Void, CustomError>
     func updateRenderingStatus(enabled: Bool)
-    func updateSmoothing(enabled: Bool)
+    func toggleSmoothing(enabled: Bool)
+    func toggleTorch(enabled: Bool, level: Float)
+    func updateScreenBrightnessLevel(level: CGFloat)
     var jetPixelBufferUpdate: PassthroughSubject<CVPixelBuffer, Never> { get }
 }
 
@@ -17,6 +23,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
     private let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInLiDARDepthCamera],
                                                                                mediaType: .video,
                                                                                position: .back)
+    private var defaultVideoDevice: AVCaptureDevice!
     private var videoDeviceInput: AVCaptureDeviceInput!
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let depthDataOutput = AVCaptureDepthDataOutput()
@@ -32,15 +39,9 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
     private var renderingEnabled: Bool = true
     var jetPixelBufferUpdate = PassthroughSubject<CVPixelBuffer, Never>()
     
+    // MARK: - Update Rendering Status
     func updateRenderingStatus(enabled: Bool) {
         renderingEnabled = enabled
-    }
-    
-    // MARK: - Update Smoothing
-    func updateSmoothing(enabled: Bool) {
-        sessionQueue.async { [weak self] in
-            self?.depthDataOutput.isFilteringEnabled = enabled
-        }
     }
     
     // MARK: - Manage Camera Authorization
@@ -70,10 +71,10 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
             }
         }
     }
-    
+    var videoDevice: AVCaptureDevice?
     // MARK: - Session Management
     func configureSession() -> AnyPublisher<Void, CustomError> {
-        let defaultVideoDevice: AVCaptureDevice? = videoDeviceDiscoverySession.devices.first
+        defaultVideoDevice = videoDeviceDiscoverySession.devices.first
         
         guard let videoDevice = defaultVideoDevice else {
             return .fail(.failedToFindVideoDevice)
@@ -143,9 +144,41 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         session.commitConfiguration()
         session.startRunning()
         
-        updateSmoothing(enabled: true)
+        toggleSmoothing(enabled: true)
         
         return .just(())
+    }
+    
+    // MARK: - Toggle Smoothing
+    func toggleSmoothing(enabled: Bool) {
+        sessionQueue.async { [weak self] in
+            self?.depthDataOutput.isFilteringEnabled = enabled
+        }
+    }
+    
+    // MARK: - Toggle Torch
+    func toggleTorch(enabled: Bool, level: Float) {
+        guard let device = defaultVideoDevice else {
+            return
+        }
+        guard device.hasTorch else {
+            print("Torch isn't available")
+            return
+        }
+        do {
+            try device.lockForConfiguration()
+            device.torchMode = enabled ? .on : .off
+            if enabled {
+                try device.setTorchModeOn(level: level)
+            }
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch can't be used")
+        }
+    }
+    
+    func updateScreenBrightnessLevel(level: CGFloat) {
+        UIScreen.main.brightness = level
     }
 }
 

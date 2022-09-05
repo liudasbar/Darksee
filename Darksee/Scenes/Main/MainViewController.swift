@@ -52,7 +52,16 @@ class MainViewController: UIViewController {
     
     private func setupActions() {
         rootView.setupSmoothingSwitchActionHandler() { [weak self] enabled in
-            self?.interactor.updateSmoothing(enabled: enabled)
+            self?.interactor.toggleSmoothing(enabled: enabled)
+        }
+        rootView.setupTorchSwitchActionHandler() { [weak self] enabled in
+            self?.interactor.toggleTorch(enabled: enabled)
+        }
+        rootView.setupDecreaseScreenBrightnessActionHandler() { [weak self] in
+            self?.interactor.updateScreenBrightnessLevel(level: .lower)
+        }
+        rootView.setupIncreaseScreenBrightnessActionHandler() { [weak self] in
+            self?.interactor.updateScreenBrightnessLevel(level: .higher)
         }
     }
     

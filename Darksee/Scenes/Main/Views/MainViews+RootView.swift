@@ -3,19 +3,66 @@ import UIKit
 extension MainViews {
     class RootView: UIView {
         // MARK: - Views
-        private var jetView: PreviewMetalView = {
+        var jetView: PreviewMetalView = {
             let metalView = PreviewMetalView(frame: .zero)
             metalView.rotation = .rotate90Degrees
             return metalView
+        }()
+        private lazy var actionsStackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.distribution = .equalSpacing
+            stackView.alignment = .center
+            stackView.spacing = 20
+            return stackView
         }()
         private lazy var smoothingActionView: RoundedButtonView = {
             return RoundedButtonView(
                 imageName: "waveform.path.ecg.rectangle",
                 selectedImageName: "waveform.path.ecg.rectangle.fill",
+                imageSize: CGSize(width: 45, height: 35),
                 imageWeight: .medium,
+                switchable: true,
                 enabled: true,
                 tapAction: { [weak self] enabled in
                     self?.switchSmoothing(enabled: enabled)
+                }
+            )
+        }()
+        private lazy var torchActionView: RoundedButtonView = {
+            return RoundedButtonView(
+                imageName: "flashlight.off.fill",
+                selectedImageName: "flashlight.on.fill",
+                imageSize: CGSize(width: 20, height: 35),
+                imageWeight: .medium,
+                switchable: true,
+                enabled: false,
+                tapAction: { [weak self] enabled in
+                    self?.switchTorch(enabled: enabled)
+                }
+            )
+        }()
+        private lazy var decreaseScreenBrightnessActionView: RoundedButtonView = {
+            return RoundedButtonView(
+                imageName: "light.min",
+                imageSize: CGSize(width: 35, height: 27),
+                imageWeight: .medium,
+                switchable: false,
+                enabled: false,
+                tapAction: { [weak self] _ in
+                    self?.decreaseScreenBrightness()
+                }
+            )
+        }()
+        private lazy var increaseScreenBrightnessActionView: RoundedButtonView = {
+            return RoundedButtonView(
+                imageName: "light.max",
+                imageSize: CGSize(width: 35, height: 27),
+                imageWeight: .medium,
+                switchable: false,
+                enabled: false,
+                tapAction: { [weak self] _ in
+                    self?.increaseScreenBrightness()
                 }
             )
         }()
@@ -29,6 +76,9 @@ extension MainViews {
         // MARK: - Variables
         var currentDrawableSize: CGSize!
         private var smoothingSwitchActionHandler: ((_ enabled: Bool) -> Void)?
+        private var torchSwitchActionHandler: ((_ enabled: Bool) -> Void)?
+        private var decreaseScreenBrightnessActionHandler: (() -> Void)?
+        private var increaseScreenBrightnessActionHandler: (() -> Void)?
 
         // MARK: - Life Cycle
         init() {
@@ -45,10 +95,26 @@ extension MainViews {
             smoothingSwitchActionHandler = handler
         }
         
+        func setupTorchSwitchActionHandler(_ handler: @escaping (Bool) -> Void) {
+            torchSwitchActionHandler = handler
+        }
+        
+        func setupDecreaseScreenBrightnessActionHandler(_ handler: @escaping () -> Void) {
+            decreaseScreenBrightnessActionHandler = handler
+        }
+        
+        func setupIncreaseScreenBrightnessActionHandler(_ handler: @escaping () -> Void) {
+            increaseScreenBrightnessActionHandler = handler
+        }
+        
         private func setupViews() {
             backgroundColor = .systemBackground
             setupMetalKitView()
+            setupActionsStackView()
             setupSmoothingActionView()
+            setupTorchActionView()
+            setupDecreaseScreenBrightnessActionView()
+            setupIncreaseScreenBrightnessActionView()
         }
         
         func setupMetalKitView() {
@@ -62,15 +128,55 @@ extension MainViews {
             ])
         }
         
+        func setupActionsStackView() {
+            addSubview(actionsStackView)
+            actionsStackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                actionsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+                actionsStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+                actionsStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+                actionsStackView.heightAnchor.constraint(equalToConstant: 70)
+            ])
+        }
+        
         func setupSmoothingActionView() {
             addSubview(smoothingActionView)
             smoothingActionView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                smoothingActionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30),
-                smoothingActionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
                 smoothingActionView.widthAnchor.constraint(equalToConstant: 70),
                 smoothingActionView.heightAnchor.constraint(equalToConstant: 70)
             ])
+            actionsStackView.addArrangedSubview(smoothingActionView)
+        }
+        
+        func setupTorchActionView() {
+            addSubview(torchActionView)
+            torchActionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                torchActionView.widthAnchor.constraint(equalToConstant: 70),
+                torchActionView.heightAnchor.constraint(equalToConstant: 70)
+            ])
+            actionsStackView.addArrangedSubview(torchActionView)
+        }
+        
+        func setupDecreaseScreenBrightnessActionView() {
+            addSubview(decreaseScreenBrightnessActionView)
+            decreaseScreenBrightnessActionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                decreaseScreenBrightnessActionView.widthAnchor.constraint(equalToConstant: 70),
+                decreaseScreenBrightnessActionView.heightAnchor.constraint(equalToConstant: 70)
+            ])
+            actionsStackView.addArrangedSubview(decreaseScreenBrightnessActionView)
+        }
+        
+        func setupIncreaseScreenBrightnessActionView() {
+            addSubview(increaseScreenBrightnessActionView)
+            increaseScreenBrightnessActionView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                increaseScreenBrightnessActionView.widthAnchor.constraint(equalToConstant: 70),
+                increaseScreenBrightnessActionView.heightAnchor.constraint(equalToConstant: 70)
+            ])
+            actionsStackView.addArrangedSubview(increaseScreenBrightnessActionView)
         }
         
         // MARK: - Populate
@@ -89,6 +195,18 @@ extension MainViews {
         // MARK: - Actions
         @objc private func switchSmoothing(enabled: Bool) {
             smoothingSwitchActionHandler?(enabled)
+        }
+        
+        @objc private func switchTorch(enabled: Bool) {
+            torchSwitchActionHandler?(enabled)
+        }
+        
+        @objc private func decreaseScreenBrightness() {
+            decreaseScreenBrightnessActionHandler?()
+        }
+        
+        @objc private func increaseScreenBrightness() {
+            increaseScreenBrightnessActionHandler?()
         }
     }
 }

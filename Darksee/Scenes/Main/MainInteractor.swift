@@ -4,14 +4,12 @@ import Foundation
 protocol MainBusinessLogic {
     func requestCameraAuthorization()
     func updateRenderingStatus(enabled: Bool)
-    func updateSmoothing(enabled: Bool)
+    func toggleSmoothing(enabled: Bool)
+    func toggleTorch(enabled: Bool)
+    func updateScreenBrightnessLevel(level: ScreenBrightness)
 }
 
-protocol MainDataStore {
-    var userName: String? { get }
-}
-
-protocol MainInteractor: MainBusinessLogic, MainDataStore {
+protocol MainInteractor: MainBusinessLogic {
     var presenter: MainPresentationLogic! { get set }
 }
 
@@ -19,7 +17,6 @@ class DefaultMainInteractor: MainInteractor {
     private var cancelBag = Set<AnyCancellable>()
     private let worker: MainWorker
     var presenter: MainPresentationLogic!
-    private(set) var userName: String?
 
     // MARK: - Methods
     init(worker: MainWorker) {
@@ -74,14 +71,26 @@ extension DefaultMainInteractor {
             .store(in: &cancelBag)
     }
     
-    // MARK: - Update Smoothing
-    func updateSmoothing(enabled: Bool) {
-        worker.updateSmoothing(enabled: enabled)
+    // MARK: - Toggle Smoothing
+    func toggleSmoothing(enabled: Bool) {
+        worker.toggleSmoothing(enabled: enabled)
+    }
+    
+    // MARK: - Toggle Torch
+    func toggleTorch(enabled: Bool) {
+        worker.toggleTorch(enabled: enabled, level: 0.1)
     }
     
     // MARK: - Update Rendering Status
     func updateRenderingStatus(enabled: Bool) {
         worker.updateRenderingStatus(enabled: enabled)
+    }
+    
+    // MARK: - Update Screen Brightness
+    func updateScreenBrightnessLevel(level: ScreenBrightness) {
+        worker.updateScreenBrightnessLevel(
+            level: level == .higher ? UIScreen.main.brightness + 0.1 : UIScreen.main.brightness - 0.1
+        )
     }
     
     // MARK: - Setup Pixel Buffer Listener
