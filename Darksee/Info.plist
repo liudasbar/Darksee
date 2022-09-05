@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Enables Darksee to access the camera and TrueDepth sensor data to build background models.</string>
+	<string>Enables Darksee to access the LiDAR sensor data to construct background scenes.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Saving images</string>
 	<key>UIApplicationSceneManifest</key>

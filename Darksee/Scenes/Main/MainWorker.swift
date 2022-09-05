@@ -20,9 +20,11 @@ protocol MainWorker {
 class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDelegate {
     // MARK: - Variables
     private let session = AVCaptureSession()
-    private let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInLiDARDepthCamera],
-                                                                               mediaType: .video,
-                                                                               position: .back)
+    private let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+        deviceTypes: [.builtInLiDARDepthCamera],
+        mediaType: .video,
+        position: .back
+    )
     private var defaultVideoDevice: AVCaptureDevice!
     private var videoDeviceInput: AVCaptureDeviceInput!
     private let depthDataOutput = AVCaptureDepthDataOutput()

@@ -3,7 +3,7 @@ import UIKit
 protocol MainRoutingLogic {
     var viewController: UIViewController! { get set }
 
-    func routeToSomewhere()
+    func routeToError(error: CustomError, dismissable: Bool)
 }
 
 protocol MainRouter: MainRoutingLogic { }
@@ -15,13 +15,9 @@ class DefaultMainRouter: MainRouter {
 // MARK: - Routing Logic
 extension DefaultMainRouter: MainRoutingLogic {
     // MARK: - Somewhere
-    func routeToSomewhere() {
-        guard let navigationController = viewController.navigationController else {
-            return
-        }
-        let targetViewController = UIViewController()
-        targetViewController.view.backgroundColor = .red
-        targetViewController.title = "Somewhere"
-        navigationController.pushViewController(targetViewController, animated: true)
+    func routeToError(error: CustomError, dismissable: Bool) {
+        let targetViewController = ErrorConfigurator.configure(with: error)
+        targetViewController.isModalInPresentation = !dismissable
+        viewController.present(targetViewController, animated: true)
     }
 }

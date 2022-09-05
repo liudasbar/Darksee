@@ -133,8 +133,8 @@ extension MainViews {
             actionsStackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 actionsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-                actionsStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-                actionsStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+                actionsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+                actionsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
                 actionsStackView.heightAnchor.constraint(equalToConstant: 70)
             ])
         }
@@ -180,8 +180,8 @@ extension MainViews {
         }
         
         // MARK: - Populate
-        func updateJetView(_ viewModel: Main.LoadGreeting.ViewModel) {
-            guard case let .greeting(pixelBuffer) = viewModel else {
+        func updateJetView(_ viewModel: Main.LoadData.ViewModel) {
+            guard case let .data(pixelBuffer) = viewModel else {
                 return
             }
             jetView.pixelBuffer = pixelBuffer

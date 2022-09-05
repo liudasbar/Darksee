@@ -29,17 +29,22 @@ extension DefaultMainInteractor {
     func requestCameraAuthorization() {
         worker.requestCameraAuthorization()
             .sink(
-                receiveCompletion: { completion in
+                receiveCompletion: { [weak self] completion in
                     switch completion {
                     case .finished:
                         ()
                     case let .failure(error):
                         print(error)
+                        self?.presenter.presentLoadVideoFeed(Main.LoadData.Response(
+                            isCameraEnabled: false,
+                            pixelBuffer: nil,
+                            error: error
+                        ))
                     }
                 },
                 receiveValue: { [weak self] authorizationStatus in
                     guard authorizationStatus == .authorized else {
-                        self?.presenter.presentLoadGreeting(Main.LoadGreeting.Response(
+                        self?.presenter.presentLoadVideoFeed(Main.LoadData.Response(
                             isCameraEnabled: false,
                             pixelBuffer: nil,
                             error: nil
@@ -56,12 +61,17 @@ extension DefaultMainInteractor {
     func configureSession() {
         worker.configureSession()
             .sink(
-                receiveCompletion: { completion in
+                receiveCompletion: { [weak self] completion in
                     switch completion {
                     case .finished:
                         ()
                     case let .failure(error):
                         print(error)
+                        self?.presenter.presentLoadVideoFeed(Main.LoadData.Response(
+                            isCameraEnabled: false,
+                            pixelBuffer: nil,
+                            error: error
+                        ))
                     }
                 },
                 receiveValue: { [weak self] _ in
@@ -97,16 +107,8 @@ extension DefaultMainInteractor {
     func setupPixelBufferListener() {
         worker.jetPixelBufferUpdate
             .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        ()
-                    case let .failure(error):
-                        print(error)
-                    }
-                },
                 receiveValue: { [weak self] pixelBuffer in
-                    self?.presenter.presentLoadGreeting(Main.LoadGreeting.Response(
+                    self?.presenter.presentLoadVideoFeed(Main.LoadData.Response(
                         isCameraEnabled: true,
                         pixelBuffer: pixelBuffer,
                         error: nil

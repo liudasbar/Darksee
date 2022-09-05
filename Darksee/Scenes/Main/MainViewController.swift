@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MainDisplayLogic: AnyObject {
-    func displayLoadGreeting(_ viewModel: Main.LoadGreeting.ViewModel)
+    func displayVideoFeed(_ viewModel: Main.LoadData.ViewModel)
 }
 
 class MainViewController: UIViewController {
@@ -80,11 +80,6 @@ class MainViewController: UIViewController {
         )
     }
     
-    // MARK: - Actions
-    private func start() {
-        router.routeToSomewhere()
-    }
-    
     // MARK: - Helpers
     @objc func didEnterBackground(notification: NSNotification) {
         // Free up resources
@@ -99,17 +94,12 @@ class MainViewController: UIViewController {
 
 // MARK: - Display Logic
 extension MainViewController: MainDisplayLogic {
-    // MARK: - Load Greating
-    func displayLoadGreeting(_ viewModel: Main.LoadGreeting.ViewModel) {
+    // MARK: - Load Video Feed
+    func displayVideoFeed(_ viewModel: Main.LoadData.ViewModel) {
         switch viewModel {
-        case .loading:
-            // TODO: Show loading indicator
-            ()
         case let .error(error):
-            // TODO: Hide loading indicator
-            ()
-        case .greeting:
-            // TODO: Hide loading indicator
+            router.routeToError(error: error, dismissable: error.dismissable)
+        case .data:
             rootView.updateJetView(viewModel)
         }
     }

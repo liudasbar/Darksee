@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MainPresentationLogic {
-    func presentLoadGreeting(_ response: Main.LoadGreeting.Response)
+    func presentLoadVideoFeed(_ response: Main.LoadData.Response)
 }
 
 protocol MainPresenter: MainPresentationLogic {
@@ -14,18 +14,18 @@ class DefaultMainPresenter: MainPresenter {
 
 // MARK: - Presentation Logic
 extension DefaultMainPresenter {
-    // MARK: - Load Greeting
-    func presentLoadGreeting(_ response: Main.LoadGreeting.Response) {
-        let viewModel: Main.LoadGreeting.ViewModel
+    // MARK: - Load Video Feed
+    func presentLoadVideoFeed(_ response: Main.LoadData.Response) {
+        let viewModel: Main.LoadData.ViewModel
         if let error = response.error {
             viewModel = .error(error)
         } else if let pixelBuffer = response.pixelBuffer, response.isCameraEnabled {
-            viewModel = .greeting(pixelBuffer)
+            viewModel = .data(pixelBuffer)
         } else {
-            viewModel = .error(NSError(domain: "", code: 0))
+            viewModel = .error(.generic)
         }
         DispatchQueue.main.async { [weak self] in
-            self?.displayLogic.displayLoadGreeting(viewModel)
+            self?.displayLogic.displayVideoFeed(viewModel)
         }
     }
 }
