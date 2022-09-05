@@ -8,13 +8,17 @@ __Darksee.xcworkspace__
 
 ## Supported OS versions
 
-Darksee application for iOS 14 and iPadOS 14 and higher.
+Support available for iOS 15.4 and iPadOS 15.4 and higher.
+
+## Supported devices
+
+Support available for any iOS or iPadOS device with LiDAR sensor on the back of the device.
 
 ## Privacy permissions
 
 User needs to grant these privacy permissions:
 
-- Camera - Enables Darksee to access the camera and TrueDepth sensor data to build background models.
+- Camera - Enables Darksee to access the LiDAR sensor data to construct background scenes.
 
 ## Updates
 
@@ -26,15 +30,13 @@ Not ready yet.
 
 ## Project base
 
-Darksee is based on [this project](https://github.com/shu223/iOS-Depth-Sampler).
+Darksee is based on [this](https://developer.apple.com/documentation/avfoundation/additional_data_capture/streaming_depth_data_from_the_truedepth_camera) Apple's sample project.
 
 ## License
 
 MIT License
 
-Copyright © 2020-2021 Liudas Baronas.
-
-Copyright © 2014-2020 Shuichi Tsutsumi.
+Copyright © 2020-2022 Liudas Baronas.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
