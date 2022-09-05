@@ -64,32 +64,6 @@ class MainViewController: UIViewController {
             self?.interactor.updateScreenBrightnessLevel(level: .higher)
         }
     }
-    
-    private func setupObservers() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(didEnterBackground),
-            name: UIApplication.didEnterBackgroundNotification,
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(willEnterForground),
-            name: UIApplication.willEnterForegroundNotification,
-            object: nil
-        )
-    }
-    
-    // MARK: - Helpers
-    @objc func didEnterBackground(notification: NSNotification) {
-        // Free up resources
-        interactor.updateRenderingStatus(enabled: false)
-        rootView.stopJetView()
-    }
-    
-    @objc func willEnterForground(notification: NSNotification) {
-        ()
-    }
 }
 
 // MARK: - Display Logic

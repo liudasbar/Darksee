@@ -16,7 +16,7 @@ extension CustomError: LocalizedError {
     public var title: String {
         switch self {
         case .generic:
-            return "Encountered an error"
+            return "An error encountered"
         case .failedToDetermineCameraAccessStatus,
              .failedToFindVideoDevice,
              .couldNotCreateVideoDeviceInput,
@@ -31,7 +31,7 @@ extension CustomError: LocalizedError {
     public var description: String {
         switch self {
         case .generic:
-            return "Unfortunately, it appears that the application has some kind of a problem"
+            return "Unfortunately, it appears that the application has some kind of a problem."
         case .failedToDetermineCameraAccessStatus:
             return "Unknown camera access status"
         case .failedToFindVideoDevice:

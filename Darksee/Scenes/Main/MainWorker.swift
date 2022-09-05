@@ -3,10 +3,6 @@ import Combine
 import MetalKit
 import AVFoundation
 
-import CoreVideo
-import MobileCoreServices
-import Accelerate
-
 protocol MainWorker {
     func requestCameraAuthorization() -> Future<AVAuthorizationStatus, CustomError>
     func configureSession() -> AnyPublisher<Void, CustomError>
@@ -72,7 +68,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
             }
         }
     }
-    var videoDevice: AVCaptureDevice?
+    
     // MARK: - Session Management
     func configureSession() -> AnyPublisher<Void, CustomError> {
         defaultVideoDevice = videoDeviceDiscoverySession.devices.first
@@ -169,6 +165,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         }
     }
     
+    // MARK: - Update Screen Brightness Level
     func updateScreenBrightnessLevel(level: CGFloat) {
         UIScreen.main.brightness = level
     }
