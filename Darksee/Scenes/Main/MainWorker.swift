@@ -25,7 +25,6 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
                                                                                position: .back)
     private var defaultVideoDevice: AVCaptureDevice!
     private var videoDeviceInput: AVCaptureDeviceInput!
-    private let videoDataOutput = AVCaptureVideoDataOutput()
     private let depthDataOutput = AVCaptureDepthDataOutput()
     private var outputSynchronizer: AVCaptureDataOutputSynchronizer?
     private let videoDepthConverter = DepthToJETConverter()
@@ -96,15 +95,6 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         }
         session.addInput(videoDeviceInput)
         
-        // Add a video data output
-        guard session.canAddOutput(videoDataOutput) else {
-            print("Could not add video data output to the session")
-            session.commitConfiguration()
-            return .fail(.generic)
-        }
-        session.addOutput(videoDataOutput)
-        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        
         // Add a depth data output
         if session.canAddOutput(depthDataOutput) {
             session.addOutput(depthDataOutput)
@@ -136,7 +126,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
             return .fail(.couldNotLockDeviceForConfiguration)
         }
 
-        outputSynchronizer = AVCaptureDataOutputSynchronizer(dataOutputs: [videoDataOutput, depthDataOutput])
+        outputSynchronizer = AVCaptureDataOutputSynchronizer(dataOutputs: [depthDataOutput])
         guard let outputSynchronizer = outputSynchronizer else {
             return .fail(.generic)
         }

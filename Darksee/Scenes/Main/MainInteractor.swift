@@ -78,7 +78,7 @@ extension DefaultMainInteractor {
     
     // MARK: - Toggle Torch
     func toggleTorch(enabled: Bool) {
-        worker.toggleTorch(enabled: enabled, level: 0.1)
+        worker.toggleTorch(enabled: enabled, level: 0.05)
     }
     
     // MARK: - Update Rendering Status
