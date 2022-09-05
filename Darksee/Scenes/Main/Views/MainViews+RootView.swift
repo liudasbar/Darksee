@@ -121,10 +121,10 @@ extension MainViews {
             addSubview(jetView)
             jetView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                jetView.topAnchor.constraint(equalTo: topAnchor),
+                jetView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+                jetView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
                 jetView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                jetView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                jetView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                jetView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
         }
         

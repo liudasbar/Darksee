@@ -41,12 +41,8 @@
 		F42DE606260CF7ED00FBB988 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F42DE605260CF7ED00FBB988 /* README.md */; };
 		F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4A2606C42C00057CAC /* AppDelegate.swift */; };
 		F443AE4D2606C42C00057CAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4C2606C42C00057CAC /* SceneDelegate.swift */; };
-		F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443AE4E2606C42C00057CAC /* ViewController.swift */; };
 		F443AE542606C42E00057CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F443AE532606C42E00057CAC /* Assets.xcassets */; };
 		F443AE572606C42E00057CAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F443AE552606C42E00057CAC /* LaunchScreen.storyboard */; };
-		F4D20E652606F24F00EE4304 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E632606F24F00EE4304 /* MetalRenderer.swift */; };
-		F4D20E662606F24F00EE4304 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E642606F24F00EE4304 /* PassThrough.metal */; };
-		F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D20E8E2607604D00EE4304 /* Clipboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,13 +87,9 @@
 		F443AE472606C42C00057CAC /* Darksee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darksee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F443AE4A2606C42C00057CAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F443AE4C2606C42C00057CAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F443AE4E2606C42C00057CAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F443AE532606C42E00057CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F443AE562606C42E00057CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F443AE582606C42E00057CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4D20E632606F24F00EE4304 /* MetalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
-		F4D20E642606F24F00EE4304 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
-		F4D20E8E2607604D00EE4304 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +166,6 @@
 		C96EA3E428C50954006264E5 /* Entries */ = {
 			isa = PBXGroup;
 			children = (
-				C96EA3FA28C51039006264E5 /* Metal */,
 				C96EA41B28C56DEF006264E5 /* ScreenBrightness.swift */,
 			);
 			path = Entries;
@@ -218,13 +209,6 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		C96EA3FA28C51039006264E5 /* Metal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Metal;
-			sourceTree = "<group>";
-		};
 		C96EA3FD28C51060006264E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +238,7 @@
 		C96EA40828C526C7006264E5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C96EA3FD28C51060006264E5 /* Extensions */,
 				C96EA43528C584FE006264E5 /* HistogramCalculator */,
 				C96EA3E528C50981006264E5 /* PreviewGenerator */,
 				C96EA41028C52730006264E5 /* PointCloud */,
@@ -325,29 +310,16 @@
 			children = (
 				F443AE4A2606C42C00057CAC /* AppDelegate.swift */,
 				F443AE4C2606C42C00057CAC /* SceneDelegate.swift */,
-				F443AE4E2606C42C00057CAC /* ViewController.swift */,
-				F4D20E8E2607604D00EE4304 /* Clipboard.swift */,
 				C96EA40328C51305006264E5 /* Common */,
 				C96EA40828C526C7006264E5 /* Utilities */,
 				C96EA40028C5125A006264E5 /* Views */,
-				C96EA3FD28C51060006264E5 /* Extensions */,
 				C96EA3E428C50954006264E5 /* Entries */,
 				C96EA3B428C5089D006264E5 /* Scenes */,
 				F443AE532606C42E00057CAC /* Assets.xcassets */,
-				F4D20E602606F23200EE4304 /* Renderer */,
 				F443AE552606C42E00057CAC /* LaunchScreen.storyboard */,
 				F443AE582606C42E00057CAC /* Info.plist */,
 			);
 			path = Darksee;
-			sourceTree = "<group>";
-		};
-		F4D20E602606F23200EE4304 /* Renderer */ = {
-			isa = PBXGroup;
-			children = (
-				F4D20E632606F24F00EE4304 /* MetalRenderer.swift */,
-				F4D20E642606F24F00EE4304 /* PassThrough.metal */,
-			);
-			path = Renderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,12 +419,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F443AE4F2606C42C00057CAC /* ViewController.swift in Sources */,
-				F4D20E662606F24F00EE4304 /* PassThrough.metal in Sources */,
 				C96EA3F528C50A61006264E5 /* Mixer.metal in Sources */,
 				C96EA42D28C57AC0006264E5 /* ErrorViewController.swift in Sources */,
 				C96EA3CA28C508BD006264E5 /* MainViews+RootView.swift in Sources */,
-				F4D20E652606F24F00EE4304 /* MetalRenderer.swift in Sources */,
 				C96EA40228C51269006264E5 /* MakeDefaultView.swift in Sources */,
 				C96EA3E328C50936006264E5 /* PreviewMetalView.swift in Sources */,
 				C96EA41528C52730006264E5 /* AAPLTransforms.mm in Sources */,
@@ -460,7 +429,6 @@
 				C96EA43228C57AC0006264E5 /* ErrorConfigurator.swift in Sources */,
 				F443AE4B2606C42C00057CAC /* AppDelegate.swift in Sources */,
 				C96EA3C328C508BD006264E5 /* MainViewController.swift in Sources */,
-				F4D20E8F2607604D00EE4304 /* Clipboard.swift in Sources */,
 				C96EA3FF28C5107B006264E5 /* AVCaptureVideoOrientation+Orientation.swift in Sources */,
 				C96EA40728C5136E006264E5 /* AnyPublisher+Shorthands.swift in Sources */,
 				C96EA3EB28C50A14006264E5 /* DepthToJETConverter.swift in Sources */,
