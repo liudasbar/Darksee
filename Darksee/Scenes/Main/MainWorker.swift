@@ -47,7 +47,6 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
             switch AVCaptureDevice.authorizationStatus(for: .video) {
             case .authorized:
                 promise(.success(.authorized))
-                //Configure session
             case .notDetermined:
                 self?.sessionQueue.suspend()
                 AVCaptureDevice.requestAccess(for: .video) { granted in
@@ -57,7 +56,6 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
                     }
                     promise(.success(.authorized))
                     self?.sessionQueue.resume()
-                    //Configure session
                 }
             case .denied:
                 promise(.success(.denied))

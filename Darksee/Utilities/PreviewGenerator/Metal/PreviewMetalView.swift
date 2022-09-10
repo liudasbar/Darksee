@@ -105,7 +105,7 @@ class PreviewMetalView: MTKView {
         }
         // Resize aspect
         resizeAspect = min(scaleX, scaleY)
-        if scaleX < scaleY {
+        if scaleX > scaleY {
             scaleY = scaleX / scaleY
             scaleX = 1.0
         } else {

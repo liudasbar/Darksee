@@ -16,6 +16,14 @@ extension MainViews {
             stackView.spacing = 20
             return stackView
         }()
+        private lazy var actionsBackgroundView: UIView = {
+            let blurEffect = UIBlurEffect(style: .dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.clipsToBounds = true
+            blurEffectView.layer.cornerRadius = 28
+            blurEffectView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            return blurEffectView
+        }()
         private lazy var smoothingActionView: RoundedButtonView = {
             return RoundedButtonView(
                 imageName: "waveform.path.ecg.rectangle",
@@ -110,6 +118,7 @@ extension MainViews {
         private func setupViews() {
             backgroundColor = .systemBackground
             setupMetalKitView()
+            setupActionsBackgroundView()
             setupActionsStackView()
             setupSmoothingActionView()
             setupTorchActionView()
@@ -121,10 +130,21 @@ extension MainViews {
             addSubview(jetView)
             jetView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                jetView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
-                jetView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
+                jetView.topAnchor.constraint(equalTo: topAnchor),
                 jetView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                jetView.trailingAnchor.constraint(equalTo: trailingAnchor)
+                jetView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                jetView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        }
+        
+        func setupActionsBackgroundView() {
+            addSubview(actionsBackgroundView)
+            actionsBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                actionsBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+                actionsBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                actionsBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                actionsBackgroundView.heightAnchor.constraint(equalToConstant: 130)
             ])
         }
         
@@ -132,7 +152,7 @@ extension MainViews {
             addSubview(actionsStackView)
             actionsStackView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                actionsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+                actionsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
                 actionsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
                 actionsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
                 actionsStackView.heightAnchor.constraint(equalToConstant: 70)

@@ -87,37 +87,22 @@ class ColorTable: NSObject {
 }
 
 class DepthToJETConverter: FilterRenderer {
-    
     var description: String = "Depth to JET Converter"
-    
     var isPrepared = false
-    
     private(set) var inputFormatDescription: CMFormatDescription?
-    
     private(set) var outputFormatDescription: CMFormatDescription?
-    
     private var inputTextureFormat: MTLPixelFormat = .invalid
-    
     private var outputPixelBufferPool: CVPixelBufferPool!
-    
     private let metalDevice = MTLCreateSystemDefaultDevice()!
-    
     private let jetParams = JETParams()
-    
     private let colors = 512
-    
     private let jetParamsBuffer: MTLBuffer
-    
     private let histogramBuffer: MTLBuffer
-    
     private var computePipelineState: MTLComputePipelineState?
-    
     private lazy var commandQueue: MTLCommandQueue? = {
         return self.metalDevice.makeCommandQueue()
     }()
-    
     private var textureCache: CVMetalTextureCache!
-    
     private var colorBuf: MTLBuffer?
     
     required init() {
@@ -171,8 +156,10 @@ class DepthToJETConverter: FilterRenderer {
     func prepare(with formatDescription: CMFormatDescription, outputRetainedBufferCountHint: Int) {
         reset()
         
-        outputPixelBufferPool = DepthToJETConverter.allocateOutputBufferPool(with: formatDescription,
-                                                                             outputRetainedBufferCountHint: outputRetainedBufferCountHint)
+        outputPixelBufferPool = DepthToJETConverter.allocateOutputBufferPool(
+            with: formatDescription,
+            outputRetainedBufferCountHint: outputRetainedBufferCountHint
+        )
         if outputPixelBufferPool == nil {
             return
         }
@@ -219,7 +206,6 @@ class DepthToJETConverter: FilterRenderer {
     }
     
     // MARK: - Depth to JET Conversion
-    
     func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
         if !isPrepared {
             assertionFailure("Invalid state: Not prepared")
@@ -235,13 +221,15 @@ class DepthToJETConverter: FilterRenderer {
         
         let hist = histogramBuffer.contents().bindMemory(to: Float.self, capacity: Int(self.jetParams.histogramSize))
         
-        HistogramCalculator.calcHistogram(for: pixelBuffer,
-                                          toBuffer: hist,
-                                          withSize: self.jetParams.histogramSize,
-                                          forColors: Int32(colors),
-                                          minDepth: 0.0,
-                                          maxDepth: 5.0,
-                                          binningFactor: self.jetParams.binningFactor)
+        HistogramCalculator.calcHistogram(
+            for: pixelBuffer,
+            toBuffer: hist,
+            withSize: self.jetParams.histogramSize,
+            forColors: Int32(colors),
+            minDepth: 0.0,
+            maxDepth: 20.0,
+            binningFactor: self.jetParams.binningFactor
+        )
         
         guard let outputTexture = makeTextureFromCVPixelBuffer(pixelBuffer: outputPixelBuffer, textureFormat: .bgra8Unorm),
             let inputTexture = makeTextureFromCVPixelBuffer(pixelBuffer: pixelBuffer, textureFormat: inputTextureFormat) else {

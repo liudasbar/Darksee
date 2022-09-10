@@ -99,7 +99,7 @@ extension DefaultMainInteractor {
     // MARK: - Update Screen Brightness
     func updateScreenBrightnessLevel(level: ScreenBrightness) {
         worker.updateScreenBrightnessLevel(
-            level: level == .higher ? UIScreen.main.brightness + 0.1 : UIScreen.main.brightness - 0.1
+            level: level == .higher ? UIScreen.main.brightness + 0.05 : UIScreen.main.brightness - 0.05
         )
     }
     
