@@ -1,4 +1,4 @@
-enum ScreenBrightness {
+enum TorchBrightness {
     case lower
     case higher
 }

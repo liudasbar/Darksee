@@ -6,7 +6,7 @@ protocol MainBusinessLogic {
     func updateRenderingStatus(enabled: Bool)
     func toggleSmoothing(enabled: Bool)
     func toggleTorch(enabled: Bool)
-    func updateScreenBrightnessLevel(level: ScreenBrightness)
+    func updateTorchLevel(levelStatus: TorchBrightness)
 }
 
 protocol MainInteractor: MainBusinessLogic {
@@ -88,7 +88,7 @@ extension DefaultMainInteractor {
     
     // MARK: - Toggle Torch
     func toggleTorch(enabled: Bool) {
-        worker.toggleTorch(enabled: enabled, level: 0.05)
+        worker.toggleTorch(enabled: enabled)
     }
     
     // MARK: - Update Rendering Status
@@ -96,11 +96,9 @@ extension DefaultMainInteractor {
         worker.updateRenderingStatus(enabled: enabled)
     }
     
-    // MARK: - Update Screen Brightness
-    func updateScreenBrightnessLevel(level: ScreenBrightness) {
-        worker.updateScreenBrightnessLevel(
-            level: level == .higher ? UIScreen.main.brightness + 0.05 : UIScreen.main.brightness - 0.05
-        )
+    // MARK: - Update Torch Brightness
+    func updateTorchLevel(levelStatus: TorchBrightness) {
+        worker.updateTorch(with: levelStatus)
     }
     
     // MARK: - Setup Pixel Buffer Listener

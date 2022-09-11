@@ -8,8 +8,9 @@ protocol MainWorker {
     func configureSession() -> AnyPublisher<Void, CustomError>
     func updateRenderingStatus(enabled: Bool)
     func toggleSmoothing(enabled: Bool)
-    func toggleTorch(enabled: Bool, level: Float)
-    func updateScreenBrightnessLevel(level: CGFloat)
+    func toggleTorch(enabled: Bool)
+    func updateTorch(with levelChange: TorchBrightness)
+    
     var jetPixelBufferUpdate: PassthroughSubject<CVPixelBuffer, Never> { get }
 }
 
@@ -143,7 +144,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
     }
     
     // MARK: - Toggle Torch
-    func toggleTorch(enabled: Bool, level: Float) {
+    func toggleTorch(enabled: Bool) {
         guard let device = defaultVideoDevice else {
             return
         }
@@ -155,7 +156,7 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
             try device.lockForConfiguration()
             device.torchMode = enabled ? .on : .off
             if enabled {
-                try device.setTorchModeOn(level: level)
+                try device.setTorchModeOn(level: 0.02)
             }
             device.unlockForConfiguration()
         } catch {
@@ -163,9 +164,47 @@ class DefaultMainWorker: NSObject, MainWorker, AVCaptureDataOutputSynchronizerDe
         }
     }
     
-    // MARK: - Update Screen Brightness Level
-    func updateScreenBrightnessLevel(level: CGFloat) {
-        UIScreen.main.brightness = level
+    func updateTorch(with levelChange: TorchBrightness) {
+        guard let device = defaultVideoDevice else {
+            return
+        }
+        guard device.hasTorch else {
+            print("Torch isn't available")
+            return
+        }
+        do {
+            try device.lockForConfiguration()
+            guard device.torchMode == .on else {
+                return
+            }
+            switch levelChange {
+            case .lower:
+                guard device.torchLevel >= 0.2 else {
+                    print("Too low")
+                    return
+                }
+            case .higher:
+                guard device.torchLevel <= 0.8 else {
+                    print("Too high")
+                    return
+                }
+            }
+            try device.setTorchModeOn(
+                level: levelChange == .higher ?
+                    Float(Double(device.torchLevel + 0.1).round(to: 1)) :
+                    Float(Double(device.torchLevel - 0.1).round(to: 1))
+            )
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch can't be used")
+        }
+    }
+}
+
+extension Double {
+    func round(to places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }
 

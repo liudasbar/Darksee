@@ -57,11 +57,11 @@ class MainViewController: UIViewController {
         rootView.setupTorchSwitchActionHandler() { [weak self] enabled in
             self?.interactor.toggleTorch(enabled: enabled)
         }
-        rootView.setupDecreaseScreenBrightnessActionHandler() { [weak self] in
-            self?.interactor.updateScreenBrightnessLevel(level: .lower)
+        rootView.setupDecreaseTorchBrightnessActionHandler() { [weak self] in
+            self?.interactor.updateTorchLevel(levelStatus: .lower)
         }
-        rootView.setupIncreaseScreenBrightnessActionHandler() { [weak self] in
-            self?.interactor.updateScreenBrightnessLevel(level: .higher)
+        rootView.setupIncreaseTorchBrightnessActionHandler() { [weak self] in
+            self?.interactor.updateTorchLevel(levelStatus: .higher)
         }
     }
 }

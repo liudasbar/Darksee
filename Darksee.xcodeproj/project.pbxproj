@@ -33,7 +33,7 @@
 		C96EA41528C52730006264E5 /* AAPLTransforms.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41228C52730006264E5 /* AAPLTransforms.mm */; };
 		C96EA41628C52730006264E5 /* PointCloudMetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41428C52730006264E5 /* PointCloudMetalView.mm */; };
 		C96EA41A28C56330006264E5 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41928C56330006264E5 /* RoundedButtonView.swift */; };
-		C96EA41C28C56DEF006264E5 /* ScreenBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41B28C56DEF006264E5 /* ScreenBrightness.swift */; };
+		C96EA41C28C56DEF006264E5 /* TorchBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA41B28C56DEF006264E5 /* TorchBrightness.swift */; };
 		C96EA42D28C57AC0006264E5 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA42328C57AC0006264E5 /* ErrorViewController.swift */; };
 		C96EA43028C57AC0006264E5 /* ErrorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA42728C57AC0006264E5 /* ErrorViews.swift */; };
 		C96EA43128C57AC0006264E5 /* ErrorViews+RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EA42828C57AC0006264E5 /* ErrorViews+RootView.swift */; };
@@ -77,7 +77,7 @@
 		C96EA41328C52730006264E5 /* AAPLTransforms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTransforms.h; sourceTree = "<group>"; };
 		C96EA41428C52730006264E5 /* PointCloudMetalView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PointCloudMetalView.mm; sourceTree = "<group>"; };
 		C96EA41928C56330006264E5 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
-		C96EA41B28C56DEF006264E5 /* ScreenBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBrightness.swift; sourceTree = "<group>"; };
+		C96EA41B28C56DEF006264E5 /* TorchBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchBrightness.swift; sourceTree = "<group>"; };
 		C96EA42328C57AC0006264E5 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		C96EA42728C57AC0006264E5 /* ErrorViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViews.swift; sourceTree = "<group>"; };
 		C96EA42828C57AC0006264E5 /* ErrorViews+RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorViews+RootView.swift"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		C96EA3E428C50954006264E5 /* Entries */ = {
 			isa = PBXGroup;
 			children = (
-				C96EA41B28C56DEF006264E5 /* ScreenBrightness.swift */,
+				C96EA41B28C56DEF006264E5 /* TorchBrightness.swift */,
 			);
 			path = Entries;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				C96EA3C428C508BD006264E5 /* MainInteractor.swift in Sources */,
 				C96EA3E828C50997006264E5 /* FilterRenderer.swift in Sources */,
 				C96EA41A28C56330006264E5 /* RoundedButtonView.swift in Sources */,
-				C96EA41C28C56DEF006264E5 /* ScreenBrightness.swift in Sources */,
+				C96EA41C28C56DEF006264E5 /* TorchBrightness.swift in Sources */,
 				C96EA3C228C508BD006264E5 /* MainConfigurator.swift in Sources */,
 				C96EA43128C57AC0006264E5 /* ErrorViews+RootView.swift in Sources */,
 				C96EA3C728C508BD006264E5 /* MainWorker.swift in Sources */,
