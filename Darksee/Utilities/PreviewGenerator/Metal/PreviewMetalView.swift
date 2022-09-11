@@ -267,15 +267,17 @@ class PreviewMetalView: MTKView {
             createTextureCache()
         }
         var cvTextureOut: CVMetalTexture?
-        CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
-                                                  textureCache!,
-                                                  previewPixelBuffer,
-                                                  nil,
-                                                  .bgra8Unorm,
-                                                  width,
-                                                  height,
-                                                  0,
-                                                  &cvTextureOut)
+        CVMetalTextureCacheCreateTextureFromImage(
+            kCFAllocatorDefault,
+            textureCache!,
+            previewPixelBuffer,
+            nil,
+            .bgra8Unorm,
+            width,
+            height,
+            0,
+            &cvTextureOut
+        )
         guard let cvTexture = cvTextureOut, let texture = CVMetalTextureGetTexture(cvTexture) else {
             print("Failed to create preview texture")
             

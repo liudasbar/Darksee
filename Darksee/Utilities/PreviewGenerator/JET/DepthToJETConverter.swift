@@ -227,7 +227,7 @@ class DepthToJETConverter: FilterRenderer {
             withSize: self.jetParams.histogramSize,
             forColors: Int32(colors),
             minDepth: 0.0,
-            maxDepth: 30.0,
+            maxDepth: 40.0,
             binningFactor: self.jetParams.binningFactor
         )
         
